@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VASORI - Tinh hoa Trái Cây Thế Giới</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+    <!-- 1. STICKY NAVIGATION BAR -->
+    <header id="main-header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-main">VASORI</span>
+                <span class="logo-sub">PREMIUM IMPORTS</span>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="#featured-fruits">Trái Cây Nhập Khẩu</a>
+                <a href="#featured-gifts">Giỏ Quà</a>
+                <a href="#tet-collection">Quà Tết 2027</a>
+                <a href="#why-choose-us">Về Chúng Tôi</a>
+            </nav>
+            
+            <div class="nav-right">
+                <div class="nav-icons">
+                    <a href="https://zalo.me/0909000000" target="_blank" class="icon-btn">
+                        <i class="fa-solid fa-comment-dots"></i>
+                    </a>
+                    <button class="icon-btn" id="cart-toggle-btn">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span class="cart-badge" id="cart-badge">0</span>
+                    </button>
+                </div>
+                <a href="#featured-fruits" class="btn-primary">Đặt hàng</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section class="hero" id="hero" style="background-image: linear-gradient(rgba(26, 16, 8, 0.7), rgba(26, 16, 8, 0.9)), url('file:///C:/Users/GOODM!/.gemini/antigravity-ide/brain/b72755d6-eb30-4dc0-8da2-80281fb67f04/hero_background_1780113767125.png');">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <div class="badge-outline">
+                    <i class="fa-solid fa-check-circle"></i> NHẬP KHẨU CHÍNH NGẠCH
+                </div>
+                <h1 class="hero-title"><span class="accent">Tinh hoa</span> Trái Cây Thế Giới</h1>
+                <p class="hero-subtitle">TẶNG QUÀ SANG TRỌNG — ĂN NGON MỖI NGÀY</p>
+                <p class="hero-desc">Trải nghiệm đẳng cấp trái cây nhập khẩu tuyển chọn từ các nhà vườn hàng đầu thế giới. Giao hàng hỏa tốc nội thành TP.HCM, đảm bảo độ tươi ngon hoàn hảo 100%.</p>
+                <div class="hero-buttons">
+                    <a href="#featured-fruits" class="btn-primary">Khám phá ngay</a>
+                    <a href="#tet-collection" class="btn-secondary">Giỏ Quà Tết 2027</a>
+                </div>
+            </div>
+            
+            <div class="hero-showcase">
+                <div class="mini-card">
+                    <div class="mc-icon">🍇</div>
+                    <div class="mc-info">
+                        <h4>Shine Muscat</h4>
+                        <span class="mc-origin">🇯🇵 Nhật Bản</span>
+                    </div>
+                </div>
+                <div class="mini-card">
+                    <div class="mc-icon">🍓</div>
+                    <div class="mc-info">
+                        <h4>Dâu Tây Joy</h4>
+                        <span class="mc-origin">🇰🇷 Hàn Quốc</span>
+                    </div>
+                </div>
+                <div class="mini-card wide">
+                    <div style="display: flex; gap: 15px; align-items: center;">
+                        <div class="mc-icon">🍒</div>
+                        <div class="mc-info">
+                            <h4>Cherry Đỏ Size 9.5</h4>
+                            <span class="mc-origin">🇺🇸 Mỹ</span>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-right" style="color: var(--gold)"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. STATS BAR -->
+    <section class="stats-bar">
+        <div class="container stats-container">
+            <div class="stat-item">
+                <h3>50+ Loại trái cây</h3>
+            </div>
+            <div class="stat-item">
+                <h3>12 Quốc gia</h3>
+            </div>
+            <div class="stat-item">
+                <h3>500+ Khách hàng</h3>
+            </div>
+            <div class="stat-item">
+                <h3>Giao nội thành HCM</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. DANH MỤC SẢN PHẨM -->
+    <section class="section" id="categories">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">DANH MỤC SẢN PHẨM</span>
+                <h2 class="section-title">Tinh Hoa <span class="accent">Lựa Chọn</span></h2>
+            </div>
+            
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="cat-icon">🍇</div>
+                    <h3>Nho & Berry</h3>
+                    <div class="cat-count">18 sản phẩm</div>
+                </div>
+                <div class="category-card">
+                    <div class="cat-icon">🥭</div>
+                    <h3>Xoài & Nhiệt đới</h3>
+                    <div class="cat-count">12 sản phẩm</div>
+                </div>
+                <div class="category-card">
+                    <div class="cat-icon">🍎</div>
+                    <h3>Táo & Lê</h3>
+                    <div class="cat-count">15 sản phẩm</div>
+                </div>
+                <div class="category-card">
+                    <div class="cat-icon">🍊</div>
+                    <h3>Cam & Quýt</h3>
+                    <div class="cat-count">9 sản phẩm</div>
+                </div>
+                <div class="category-card">
+                    <div class="cat-icon">🧧</div>
+                    <h3>Giỏ Quà Tết</h3>
+                    <div class="cat-count">24 mẫu</div>
+                </div>
+                <div class="category-card">
+                    <div class="cat-icon">🎁</div>
+                    <h3>Combo Tặng</h3>
+                    <div class="cat-count">8 combo</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SẢN PHẨM NỔI BẬT - TRÁI CÂY -->
+    <section class="section" id="featured-fruits" style="background-color: var(--white);">
+        <div class="container">
+            <div class="section-header-flex">
+                <div>
+                    <span class="section-tag">TƯƠI MỚI MỖI NGÀY</span>
+                    <h2 class="section-title">Trái Cây <span class="accent">Nhập Khẩu</span></h2>
+                </div>
+                <a href="#" class="view-all">Xem tất cả <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="pc-image">
+                        <span class="pc-badges">
+                            <span class="badge-origin">🇯🇵 Nhật Bản</span>
+                            <span class="badge-sale">FLASH SALE ⚡</span>
+                        </span>
+                        <img loading="lazy" src="file:///C:/Users/GOODM!/.gemini/antigravity-ide/brain/b72755d6-eb30-4dc0-8da2-80281fb67f04/fruit_flat_lay_1780113731620.png" alt="Nho Shine Muscat">
+                    </div>
+                    <div class="pc-content">
+                        <div class="pc-title">Nho Shine Muscat Nhật (kg)</div>
+                        <div class="pc-price-wrap">
+                            <span class="price-sale">890.000đ</span>
+                            <span class="price-original">1.200.000đ</span>
+                        </div>
+                        <div class="pc-rating">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <span>4.8 (124) | Đã bán: 850</span>
+                        </div>
+                        <button class="btn-add-cart add-to-cart-btn"><i class="fa-solid fa-bag-shopping"></i> THÊM VÀO GIỎ</button>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="pc-image">
+                        <span class="pc-badges">
+                            <span class="badge-origin">🇰🇷 Hàn Quốc</span>
+                            <span class="badge-sale">FLASH SALE ⚡</span>
+                        </span>
+                        <img loading="lazy" src="file:///C:/Users/GOODM!/.gemini/antigravity-ide/brain/b72755d6-eb30-4dc0-8da2-80281fb67f04/fruit_flat_lay_1780113731620.png" alt="Dâu Tây">
+                    </div>
+                    <div class="pc-content">
+                        <div class="pc-title">Dâu Tây Hàn Quốc size XL (250g)</div>
+                        <div class="pc-price-wrap">
+                            <span class="price-sale">380.000đ</span>
+                            <span class="price-original">520.000đ</span>
+                        </div>
+                        <div class="pc-rating">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <span>4.9 (89) | Đã bán: 420</span>
+                        </div>
+                        <button class="btn-add-cart add-to-cart-btn"><i class="fa-solid fa-bag-shopping"></i> THÊM VÀO GIỎ</button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="pc-image">
+                        <span class="pc-badges">
+                            <span class="badge-origin">🇳🇿 New Zealand</span>
+                            <span class="badge-sale">FLASH SALE ⚡</span>
+                        </span>
+                        <img loading="lazy" src="file:///C:/Users/GOODM!/.gemini/antigravity-ide/brain/b72755d6-eb30-4dc0-8da2-80281fb67f04/fruit_flat_lay_1780113731620.png" alt="Kiwi Vàng">
+                    </div>
+                    <div class="pc-content">
+                        <div class="pc-title">Kiwi Vàng Zespri NZ (kg)</div>
+                        <div class="pc-price-wrap">
+                            <span class="price-sale">195.000đ</span>
+                            <span class="price-original">260.000đ</span>
+                        </div>
+                        <div class="pc-rating">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                            </div>
+                            <span>4.7 (210) | Đã bán: 1.2k</span>
+                        </div>
+                        <button class="btn-add-cart add-to-cart-btn"><i class="fa-solid fa-bag-shopping"></i> THÊM VÀO GIỎ</button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="pc-image">
+                        <span class="pc-badges">
+                            <span class="badge-origin">🇦🇺 Úc</span>
+                            <span class="badge-sale">FLASH SALE ⚡</span>
+                        </span>
+                        <img loading="lazy" src="file:///C:/Users/GOODM!/.gemini/antigravity-ide/brain/b72755d6-eb30-4dc0-8da2-80281fb67f04/fruit_flat_lay_1780113731620.png" alt="Nho Đỏ">
+                    </div>
+                    <div class="pc-content">
+                        <div class="pc-title">Nho Đỏ Crimson Úc (kg)</div>
+                        <div class="pc-price-wrap">
+                            <span class="price-sale">145.000đ</span>
+                            <span class="price-original">185.000đ</span>
+                        </div>
+                        <div class="pc-rating">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <span>4.8 (156) | Đã bán: 980</span>
+                        </div>
+                        <button class="btn-add-cart add-to-cart-btn"><i class="fa-solid fa-bag-shopping"></i> THÊM VÀO GIỎ</button>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="pc-image">
+                        <span class="pc-badges">
+                            <span class="badge-origin">🇺🇸 Mỹ</span>
+                            <span class="badge-sale">FLASH SALE ⚡</span>
+                        </span>
+                        <img loading="lazy" src="file:///C:/Users/GOODM!/.gemini/antigravity-ide/brain/b72755d6-eb30-4dc0-8da2-80281fb67f04/fruit_flat_lay_1780113731620.png" alt="Việt Quất">
+                    </div>
+                    <div class="pc-content">
+                        <div class="pc-title">Việt Quất Mỹ hộp (125g)</div>
+                        <div class="pc-price-wrap">
+                            <span class="price-sale">160.000đ</span>
+                            <span class="price-original">210.000đ</span>
+                        </div>
+                        <div class="pc-rating">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <span>4.9 (312) | Đã bán: 2.5k</span>
+                        </div>
+                        <button class="btn-add-cart add-to-cart-btn"><i class="fa-solid fa-bag-shopping"></i> THÊM VÀO GIỎ</button>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <div class="pc-image">
+                        <span class="pc-badges">
+                            <span class="badge-origin">🇿🇦 Nam Phi</span>
+                            <span class="badge-sale">FLASH SALE ⚡</span>
+                        </span>
+                        <img loading="lazy" src="file:///C:/Users/GOODM!/.gemini/antigravity-ide/brain/b72755d6-eb30-4dc0-8da2-80281fb67f04/fruit_flat_lay_1780113731620.png" alt="Táo Fuji">
+                    </div>
+                    <div class="pc-content">
+                        <div class="pc-title">Táo Fuji Nam Phi (kg)</div>
+                        <div class="pc-price-wrap">
+                            <span class="price-sale">140.000đ</span>
+                            <span class="price-original">180.000đ</span>
+                        </div>
+                        <div class="pc-rating">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <span>4.7 (145) | Đã bán: 800</span>
+                        </div>
+                        <button class="btn-add-cart add-to-cart-btn"><i class="fa-solid fa-bag-shopping"></i> THÊM VÀO GIỎ</button>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="product-card">
+                    <div class="pc-image">
+                        <span class="pc-badges">
+                            <span class="badge-origin">🇺🇸 Mỹ</span>
+                            <span class="badge-sale">FLASH SALE ⚡</span>
+                        </span>
+                        <img loading="lazy" src="file:///C:/Users/GOODM!/.gemini/antigravity-ide/brain/b72755d6-eb30-4dc0-8da2-80281fb67f04/fruit_flat_lay_1780113731620.png" alt="Đào Trắng">
+                    </div>
+                    <div class="pc-content">
+                        <div class="pc-title">Đào Trắng California (kg)</div>
+                        <div class="pc-price-wrap">
+                            <span class="price-sale">250.000đ</span>
+                            <span class="price-original">310.000đ</span>
+                        </div>
+                        <div class="pc-rating">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <span>4.9 (67) | Đã bán: 230</span>
+                        </div>
+                        <button class="btn-add-cart add-to-cart-btn"><i class="fa-solid fa-bag-shopping"></i> THÊM VÀO GIỎ</button>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="product-card">
+                    <div class="pc-image">
+                        <span class="pc-badges">
+                            <span class="badge-origin">🇺🇸 Mỹ</span>
+                            <span class="badge-sale">FLASH SALE ⚡</span>
+                        </span>
+                        <img loading="lazy" src="file:///C:/Users/GOODM!/.gemini/antigravity-ide/brain/b72755d6-eb30-4dc0-8da2-80281fb67f04/fruit_flat_lay_1780113731620.png" alt="Cherry Đỏ">
+                    </div>
+                    <div class="pc-content">
+                        <div class="pc-title">Cherry Đỏ Mỹ 500g (hộp)</div>
+                        <div class="pc-price-wrap">
+                            <span class="price-sale">420.000đ</span>
+                            <span class="price-original">580.000đ</span>
+                        </div>
+                        <div class="pc-rating">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <span>4.9 (245) | Đã bán: 1.1k</span>
+                        </div>
+                        <button class="btn-add-cart add-to-cart-btn"><i class="fa-solid fa-bag-shopping"></i> THÊM VÀO GIỎ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. BỘ SƯU TẬP QUÀ TẾT 2027 -->
+    <section class="tet-collection" id="tet-collection">
+        <div class="container tet-grid">
+            <div class="tet-info">
+                <span class="section-tag">XUÂN ĐINH MÙI 2027</span>
+                <h2 class="section-title">Bộ Sưu Tập <span class="accent">Quà Tết</span></h2>
+                <p class="tet-desc">Trao gửi tâm giao, đắc lộc phú quý với những thiết kế giỏ quà độc bản từ VASORI, kết hợp trái cây nhập khẩu thượng hạng và bánh vang danh tiếng.</p>
+                
+                <div class="pricing-tiers">
+                    <div class="tier-card">
+                        <h4 class="tier-title">VASORI Classic</h4>
+                        <div class="tier-price">500.000đ – 1.200.000đ</div>
+                        <div class="tier-desc">Giỏ trái cây tiêu chuẩn kết hợp hoa tươi & bánh kẹo nhập khẩu cơ bản.</div>
+                    </div>
+                    <div class="tier-card" style="border-color: var(--gold); background: rgba(184, 134, 11, 0.1);">
+                        <h4 class="tier-title">VASORI Prestige</h4>
+                        <div class="tier-price">1.500.000đ – 3.000.000đ</div>
+                        <div class="tier-desc">Trái cây Nhật thượng hạng, rượu vang Pháp/Ý cao cấp, đóng hộp gỗ sang trọng.</div>
+                    </div>
+                    <div class="tier-card">
+                        <h4 class="tier-title">VASORI Royal</h4>
+                        <div class="tier-price">3.000.000đ – 10.000.000đ+</div>
+                        <div class="tier-desc">Thiết kế độc quyền theo yêu cầu, khắc/in logo doanh nghiệp mạ vàng.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tet-showcase">
+                <div class="showcase-item">
+                    <div class="sc-img">
+                        <img loading="lazy" src="file:///C:/Users/GOODM!/.gemini/antigravity-ide/brain/b72755d6-eb30-4dc0-8da2-80281fb67f04/tet_gift_basket_1780113748243.png" alt="VAS-GQ001">
+                    </div>
+                    <div class="sc-info">
+                        <div class="pc-sku">VAS-GQ001</div>
+                        <div class="sc-title">Giỏ Trái Cây Hỗn Hợp</div>
+                        <div class="sc-price">399.000đ - 529.000đ</div>
+                        <button class="btn-add-cart btn-details" style="margin-top: 10px;">Xem chi tiết</button>
+                    </div>
+                </div>
+                <div class="showcase-item">
+                    <div class="sc-img">
+                        <img loading="lazy" src="file:///C:/Users/GOODM!/.gemini/antigravity-ide/brain/b72755d6-eb30-4dc0-8da2-80281fb67f04/tet_gift_basket_1780113748243.png" alt="VAS-GQ002">
+                    </div>
+                    <div class="sc-info">
+                        <div class="pc-sku">VAS-GQ002</div>
+                        <div class="sc-title">Giỏ Trái Cây Tone Đỏ</div>
+                        <div class="sc-price">919.000đ - 1.239.000đ</div>
+                        <button class="btn-add-cart btn-details" style="margin-top: 10px;">Xem chi tiết</button>
+                    </div>
+                </div>
+                <div class="showcase-item">
+                    <div class="sc-img">
+                        <img loading="lazy" src="file:///C:/Users/GOODM!/.gemini/antigravity-ide/brain/b72755d6-eb30-4dc0-8da2-80281fb67f04/tet_gift_basket_1780113748243.png" alt="VAS-GQ005">
+                    </div>
+                    <div class="sc-info">
+                        <div class="pc-sku">VAS-GQ005</div>
+                        <div class="sc-title">Quà Tết Thành Ý Classic</div>
+                        <div class="sc-price">2.214.000đ</div>
+                        <button class="btn-add-cart btn-details" style="margin-top: 10px;">Xem chi tiết</button>
+                    </div>
+                </div>
+                <div class="showcase-item">
+                    <div class="sc-img">
+                        <img loading="lazy" src="file:///C:/Users/GOODM!/.gemini/antigravity-ide/brain/b72755d6-eb30-4dc0-8da2-80281fb67f04/tet_gift_basket_1780113748243.png" alt="VAS-GQ008">
+                    </div>
+                    <div class="sc-info">
+                        <div class="pc-sku">VAS-GQ008</div>
+                        <div class="sc-title">Giỏ Quà Tết Prestige</div>
+                        <div class="sc-price">1.885.000đ</div>
+                        <button class="btn-add-cart btn-details" style="margin-top: 10px;">Xem chi tiết</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. SẢN PHẨM NỔI BẬT - GIỎ QUÀ -->
+    <section class="section" id="featured-gifts">
+        <div class="container">
+            <div class="section-header-flex">
+                <div>
+                    <span class="section-tag">BỘ SƯU TẬP QUÀ TẶNG</span>
+                    <h2 class="section-title">Sản Phẩm <span class="accent">Nổi Bật</span></h2>
+                </div>
+                <a href="#" class="view-all">Xem tất cả <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="product-grid">
+                <!-- Gift 1 -->
+                <div class="product-card">
+                    <div class="pc-image">
+                        <span class="pc-badges">
+                            <span class="badge-sale">FLASH SALE ⚡</span>
+                        </span>
+                        <img loading="lazy" src="file:///C:/Users/GOODM!/.gemini/antigravity-ide/brain/b72755d6-eb30-4dc0-8da2-80281fb67f04/tet_gift_basket_1780113748243.png" alt="Giỏ Quà">
+                    </div>
+                    <div class="pc-content">
+                        <div class="pc-sku">VAS-GQ001</div>
+                        <div class="pc-title">Giỏ Trái Cây Hỗn Hợp Cơ Bản</div>
+                        <div class="pc-price-wrap">
+                            <span class="price-sale">399.000đ</span>
+                            <span class="price-original">529.000đ</span>
+                        </div>
+                        <button class="btn-add-cart add-to-cart-btn"><i class="fa-solid fa-bag-shopping"></i> THÊM VÀO GIỎ</button>
+                    </div>
+                </div>
+
+                <!-- Gift 2 -->
+                <div class="product-card">
+                    <div class="pc-image">
+                        <span class="pc-badges">
+                            <span class="badge-sale">FLASH SALE ⚡</span>
+                        </span>
+                        <img loading="lazy" src="file:///C:/Users/GOODM!/.gemini/antigravity-ide/brain/b72755d6-eb30-4dc0-8da2-80281fb67f04/tet_gift_basket_1780113748243.png" alt="Giỏ Quà">
+                    </div>
+                    <div class="pc-content">
+                        <div class="pc-sku">VAS-GQ002</div>
+                        <div class="pc-title">Giỏ Trái Cây Tone Đỏ Tiêu Chuẩn</div>
+                        <div class="pc-price-wrap">
+                            <span class="price-sale">919.000đ</span>
+                            <span class="price-original">1.239.000đ</span>
+                        </div>
+                        <button class="btn-add-cart add-to-cart-btn"><i class="fa-solid fa-bag-shopping"></i> THÊM VÀO GIỎ</button>
+                    </div>
+                </div>
+
+                <!-- Gift 3 -->
+                <div class="product-card">
+                    <div class="pc-image">
+                        <span class="pc-badges">
+                            <span class="badge-sale">FLASH SALE ⚡</span>
+                        </span>
+                        <img loading="lazy" src="file:///C:/Users/GOODM!/.gemini/antigravity-ide/brain/b72755d6-eb30-4dc0-8da2-80281fb67f04/tet_gift_basket_1780113748243.png" alt="Giỏ Quà">
+                    </div>
+                    <div class="pc-content">
+                        <div class="pc-sku">VAS-GQ003</div>
+                        <div class="pc-title">Giỏ Trái Cây Các Loại Tone Trắng Kem</div>
+                        <div class="pc-price-wrap">
+                            <span class="price-sale">999.000đ</span>
+                            <span class="price-original">1.530.000đ</span>
+                        </div>
+                        <button class="btn-add-cart add-to-cart-btn"><i class="fa-solid fa-bag-shopping"></i> THÊM VÀO GIỎ</button>
+                    </div>
+                </div>
+
+                <!-- Gift 4 -->
+                <div class="product-card">
+                    <div class="pc-image">
+                        <span class="pc-badges">
+                            <span class="badge-sale">FLASH SALE ⚡</span>
+                        </span>
+                        <img loading="lazy" src="file:///C:/Users/GOODM!/.gemini/antigravity-ide/brain/b72755d6-eb30-4dc0-8da2-80281fb67f04/tet_gift_basket_1780113748243.png" alt="Giỏ Quà">
+                    </div>
+                    <div class="pc-content">
+                        <div class="pc-sku">VAS-GQ004</div>
+                        <div class="pc-title">Giỏ Quà Trái Cây & Hoa Tone Hồng</div>
+                        <div class="pc-price-wrap">
+                            <span class="price-sale">1.179.000đ</span>
+                            <span class="price-original">1.869.000đ</span>
+                        </div>
+                        <button class="btn-add-cart add-to-cart-btn"><i class="fa-solid fa-bag-shopping"></i> THÊM VÀO GIỎ</button>
+                    </div>
+                </div>
+
+                <!-- Gift 5 -->
+                <div class="product-card">
+                    <div class="pc-image">
+                        <img loading="lazy" src="file:///C:/Users/GOODM!/.gemini/antigravity-ide/brain/b72755d6-eb30-4dc0-8da2-80281fb67f04/tet_gift_basket_1780113748243.png" alt="Giỏ Quà">
+                    </div>
+                    <div class="pc-content">
+                        <div class="pc-sku">VAS-GQ005</div>
+                        <div class="pc-title">Giỏ Quà Tết Thành Ý Classic</div>
+                        <div class="pc-price-wrap">
+                            <span class="price-regular">2.214.000đ</span>
+                        </div>
+                        <button class="btn-add-cart add-to-cart-btn"><i class="fa-solid fa-bag-shopping"></i> THÊM VÀO GIỎ</button>
+                    </div>
+                </div>
+
+                <!-- Gift 6 -->
+                <div class="product-card">
+                    <div class="pc-image">
+                        <span class="pc-badges">
+                            <span class="badge-sale">FLASH SALE ⚡</span>
+                        </span>
+                        <img loading="lazy" src="file:///C:/Users/GOODM!/.gemini/antigravity-ide/brain/b72755d6-eb30-4dc0-8da2-80281fb67f04/tet_gift_basket_1780113748243.png" alt="Giỏ Quà">
+                    </div>
+                    <div class="pc-content">
+                        <div class="pc-sku">VAS-GQ006</div>
+                        <div class="pc-title">Hộp Quà Tết Lộc Phát Tiêu Chuẩn</div>
+                        <div class="pc-price-wrap">
+                            <span class="price-sale">454.000đ</span>
+                            <span class="price-original">505.000đ</span>
+                        </div>
+                        <button class="btn-add-cart add-to-cart-btn"><i class="fa-solid fa-bag-shopping"></i> THÊM VÀO GIỎ</button>
+                    </div>
+                </div>
+
+                <!-- Gift 7 -->
+                <div class="product-card">
+                    <div class="pc-image">
+                        <img loading="lazy" src="file:///C:/Users/GOODM!/.gemini/antigravity-ide/brain/b72755d6-eb30-4dc0-8da2-80281fb67f04/tet_gift_basket_1780113748243.png" alt="Giỏ Quà">
+                    </div>
+                    <div class="pc-content">
+                        <div class="pc-sku">VAS-GQ007</div>
+                        <div class="pc-title">Hộp Quà Tết Phú Quý Cao Cấp</div>
+                        <div class="pc-price-wrap">
+                            <span class="price-regular">632.000đ</span>
+                        </div>
+                        <button class="btn-add-cart add-to-cart-btn"><i class="fa-solid fa-bag-shopping"></i> THÊM VÀO GIỎ</button>
+                    </div>
+                </div>
+
+                <!-- Gift 8 -->
+                <div class="product-card">
+                    <div class="pc-image">
+                        <img loading="lazy" src="file:///C:/Users/GOODM!/.gemini/antigravity-ide/brain/b72755d6-eb30-4dc0-8da2-80281fb67f04/tet_gift_basket_1780113748243.png" alt="Giỏ Quà">
+                    </div>
+                    <div class="pc-content">
+                        <div class="pc-sku">VAS-GQ008</div>
+                        <div class="pc-title">Giỏ Quà Tết Prestige</div>
+                        <div class="pc-price-wrap">
+                            <span class="price-regular">1.885.000đ</span>
+                        </div>
+                        <button class="btn-add-cart add-to-cart-btn"><i class="fa-solid fa-bag-shopping"></i> THÊM VÀO GIỎ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. TẠI SAO CHỌN VASORI -->
+    <section class="section" id="why-choose-us" style="background-color: var(--white); border-top: 1px solid rgba(0,0,0,0.05);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">CAM KẾT CHẤT LƯỢNG</span>
+                <h2 class="section-title">Tại Sao Chọn <span class="accent">VASORI</span></h2>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feat-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <h4>Nhập khẩu chính ngạch</h4>
+                    <p style="font-size: 0.9rem; color: var(--gray-medium);">100% trái cây có giấy tờ nguồn gốc rõ ràng, kiểm định vệ sinh an toàn thực phẩm.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feat-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                    <h4>Giao hàng nhanh HCM</h4>
+                    <p style="font-size: 0.9rem; color: var(--gray-medium);">Dịch vụ giao hỏa tốc 2H nội thành TP.HCM, đảm bảo độ tươi mới.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feat-icon"><i class="fa-solid fa-gift"></i></div>
+                    <h4>Giỏ quà theo yêu cầu</h4>
+                    <p style="font-size: 0.9rem; color: var(--gray-medium);">Cá nhân hóa theo ngân sách, thiết kế riêng biệt cho doanh nghiệp.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feat-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h4>Đổi trả 24h</h4>
+                    <p style="font-size: 0.9rem; color: var(--gray-medium);">Cam kết 1 đổi 1 trong vòng 24h nếu sản phẩm không đạt chất lượng chuẩn.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. CTA SECTION -->
+    <section class="cta-section">
+        <div class="container cta-container">
+            <h2 class="cta-title">Nhận báo giá giỏ quà Tết 2027</h2>
+            <form class="cta-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã liên hệ. Chúng tôi sẽ gọi lại ngay!');">
+                <input type="text" placeholder="Nhập SĐT hoặc Zalo của bạn..." required>
+                <button type="submit">Liên hệ ngay</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 10. FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Col 1 -->
+                <div class="footer-col footer-logo">
+                    <div class="logo">
+                        <span class="logo-main">VASORI</span>
+                        <span class="logo-sub">PREMIUM IMPORTS</span>
+                    </div>
+                    <p class="footer-desc">VASORI là thương hiệu chuyên cung cấp trái cây nhập khẩu cao cấp và dịch vụ thiết kế giỏ quà Tết doanh nghiệp chuyên nghiệp tại TP.HCM.</p>
+                </div>
+                
+                <!-- Col 2 -->
+                <div class="footer-col">
+                    <h4>Sản Phẩm</h4>
+                    <div class="footer-links">
+                        <a href="#featured-fruits">Trái Cây Nhập Khẩu</a>
+                        <a href="#featured-gifts">Giỏ Quà & Hộp Quà</a>
+                        <a href="#tet-collection">Bộ Sưu Tập Tết 2027</a>
+                        <a href="#">Combo Quà Tặng</a>
+                        <a href="#">Trái Cây Theo Mùa</a>
+                    </div>
+                </div>
+                
+                <!-- Col 3 -->
+                <div class="footer-col">
+                    <h4>Hỗ Trợ</h4>
+                    <div class="footer-links">
+                        <a href="#">Về VASORI</a>
+                        <a href="#">Chính Sách Đổi Trả</a>
+                        <a href="#">Chính Sách Giao Hàng</a>
+                        <a href="#">Khách Hàng Doanh Nghiệp</a>
+                        <a href="#">Câu Hỏi Thường Gặp</a>
+                    </div>
+                </div>
+                
+                <!-- Col 4 -->
+                <div class="footer-col">
+                    <h4>Liên Hệ</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>123 Nguyễn Văn Linh, Phường Tân Phú, Quận 7, TP.HCM</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <span>Hotline: 0909 000 000</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>Email: cskh@vasori.vn</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 VASORI Premium Imports. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://zalo.me/0909000000" target="_blank"><i>Zalo</i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 11. CART SLIDE-IN PANEL -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-panel" id="cart-panel">
+        <div class="cart-header">
+            <h3>Giỏ Hàng <i class="fa-solid fa-basket-shopping" style="color: var(--gold); margin-left: 5px;"></i></h3>
+            <button class="close-cart" id="close-cart-btn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        
+        <div class="cart-body" id="cart-items-container">
+            <!-- Items will be generated by JS -->
+        </div>
+        
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Tổng cộng:</span>
+                <span id="cart-total-amount">0đ</span>
+            </div>
+            <button class="btn-checkout" id="btn-checkout-zalo">
+                Thanh toán qua Zalo <i class="fa-solid fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./script.js"></script>
+</body>
+</html>
