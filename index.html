@@ -211,6 +211,30 @@
             .stats-grid, .product-grid, .features-grid, .hero-showcase { grid-template-columns: 1fr; }
             .mini-card.wide { grid-column: auto; }
         }
+
+        /* === IMPECCABLE ANIMATIONS === */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal.delay-1 { transition-delay: 0.1s; }
+        .reveal.delay-2 { transition-delay: 0.2s; }
+        .reveal.delay-3 { transition-delay: 0.3s; }
+        .reveal.delay-4 { transition-delay: 0.4s; }
+        
+        .slide-content h1, .slide-content p, .slide-content .hero-badge, .slide-content .hero-btns { opacity: 0; transform: translateY(20px); }
+        .slide.active .slide-content h1 { animation: fadeUp 0.8s forwards 0.2s; }
+        .slide.active .slide-content p.hero-subtitle { animation: fadeUp 0.8s forwards 0.3s; }
+        .slide.active .slide-content p.hero-desc { animation: fadeUp 0.8s forwards 0.4s; }
+        .slide.active .slide-content .hero-btns { animation: fadeUp 0.8s forwards 0.5s; }
+        .slide.active .slide-content .hero-badge { animation: fadeUp 0.8s forwards 0.1s; }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
@@ -501,6 +525,8 @@
             sliderContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
             dots.forEach(dot => dot.classList.remove('active'));
             dots[currentSlide].classList.add('active');
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[currentSlide].classList.add('active');
         };
 
         const moveSlide = (step) => {
@@ -672,7 +698,28 @@
         };
 
         // Init
+        updateSlider();
         updateCartUI();
+
+        /* === IMPECCABLE ANIMATIONS OBSERVER === */
+        document.querySelectorAll('.cat-card, .product-card, .stat-item, .feature-card, .section-title, .tet-item, .tier-card').forEach((el, index) => {
+            el.classList.add('reveal');
+            if (el.classList.contains('product-card') || el.classList.contains('cat-card') || el.classList.contains('stat-item') || el.classList.contains('feature-card')) {
+                let delay = (index % 4) + 1;
+                el.classList.add('delay-' + delay);
+            }
+        });
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
