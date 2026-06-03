@@ -25,7 +25,7 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { font-family: var(--font-body); color: var(--dark); background-color: var(--cream); line-height: 1.5; }
+        body { font-family: var(--font-body); color: var(--cream); background-color: var(--dark); line-height: 1.5; }
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; }
         img { max-width: 100%; height: auto; display: block; }
@@ -37,8 +37,8 @@
             padding: 15px 0; transition: var(--transition);
             background: transparent;
         }
-        .navbar.scrolled { background: rgba(253, 248, 240, 0.95); backdrop-filter: blur(10px); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .navbar.scrolled .logo, .navbar.scrolled .nav-links a { color: var(--dark); }
+        .navbar.scrolled { background: rgba(26, 16, 8, 0.95); backdrop-filter: blur(10px); box-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+        .navbar.scrolled .logo, .navbar.scrolled .nav-links a { color: var(--cream); }
         .nav-content { display: flex; justify-content: space-between; align-items: center; }
         .logo { font-family: var(--font-heading); font-size: 28px; font-weight: 700; color: var(--cream); line-height: 1; }
         .logo span { display: block; font-family: var(--font-body); font-size: 10px; font-weight: 500; letter-spacing: 2px; }
@@ -57,64 +57,73 @@
         }
         .btn-primary:hover { background: #A07509; color: white; }
 
-        /* === 2. HERO SECTION === */
-        .hero {
-            min-height: 90vh; background-color: var(--dark); background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
-            background-size: 20px 20px; display: flex; align-items: center; padding-top: 80px; color: var(--cream);
-        }
-        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-        .hero-badge { display: inline-block; padding: 6px 12px; background: rgba(184, 134, 11, 0.1); border: 1px solid var(--gold); color: var(--gold); border-radius: var(--border-radius-pill); font-size: 12px; font-weight: 600; margin-bottom: 20px; }
-        .hero-title { font-family: var(--font-heading); font-size: 64px; line-height: 1.1; margin-bottom: 10px; }
+        /* === 2. HERO SLIDER SECTION === */
+        .hero-slider { position: relative; width: 100%; height: 90vh; overflow: hidden; background-color: var(--dark); }
+        .slider-container { display: flex; width: 100%; height: 100%; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
+        .slide { min-width: 100%; height: 100%; position: relative; }
+        .slide img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+        .slide-content { position: absolute; top: 50%; transform: translateY(-50%); width: 100%; max-width: 1200px; left: 0; right: 0; margin: 0 auto; padding: 0 40px; color: var(--cream); z-index: 2;}
+        .slide-content.left-align { text-align: left; padding-right: 55%; }
+        .slide-content.right-align { text-align: right; padding-left: 55%; }
+        
+        .hero-badge { display: inline-block; padding: 6px 12px; background: rgba(184, 134, 11, 0.3); border: 1px solid var(--gold); color: var(--gold-light); border-radius: var(--border-radius-pill); font-size: 12px; font-weight: 600; margin-bottom: 20px; backdrop-filter: blur(5px); }
+        .hero-title { font-family: var(--font-heading); font-size: 64px; line-height: 1.1; margin-bottom: 10px; text-shadow: 2px 2px 8px rgba(0,0,0,0.7); }
         .hero-title i { color: var(--gold); }
-        .hero-subtitle { font-size: 18px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 20px; }
-        .hero-desc { font-size: 16px; color: #ccc; margin-bottom: 40px; max-width: 90%; }
+        .hero-subtitle { font-size: 18px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 20px; text-shadow: 1px 1px 5px rgba(0,0,0,0.7); }
+        .hero-desc { font-size: 16px; color: #fff; margin-bottom: 40px; text-shadow: 1px 1px 5px rgba(0,0,0,0.7); font-weight: 500; }
+        
         .hero-btns { display: flex; gap: 20px; }
-        .btn-outline { background: transparent; color: var(--gold); border: 1px solid var(--gold); padding: 10px 24px; border-radius: var(--border-radius-btn); font-weight: 600; font-size: 14px; text-transform: uppercase; cursor: pointer; transition: var(--transition); }
+        .slide-content.right-align .hero-btns { justify-content: flex-end; }
+        .btn-outline { background: rgba(0,0,0,0.4); color: var(--gold); border: 1px solid var(--gold); padding: 10px 24px; border-radius: var(--border-radius-btn); font-weight: 600; font-size: 14px; text-transform: uppercase; cursor: pointer; transition: var(--transition); backdrop-filter: blur(5px); }
         .btn-outline:hover { background: var(--gold); color: var(--dark); }
-        .hero-showcase { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .mini-card { background: rgba(255,255,255,0.05); padding: 15px; border-radius: var(--border-radius-card); border: 1px solid rgba(184, 134, 11, 0.2); display: flex; align-items: center; gap: 15px; }
-        .mini-card.wide { grid-column: span 2; }
-        .mini-card span.emoji { font-size: 32px; }
-        .mini-card div h4 { font-size: 14px; color: var(--cream); }
-        .mini-card div p { font-size: 12px; color: var(--gold); }
+        
+        .slider-controls { position: absolute; bottom: 40px; left: 0; right: 0; display: flex; justify-content: center; align-items: center; gap: 30px; z-index: 10; }
+        .slider-btn { background: rgba(255,255,255,0.2); color: white; border: none; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; transition: var(--transition); backdrop-filter: blur(5px); font-size: 20px; display: flex; justify-content: center; align-items: center; }
+        .slider-btn:hover { background: var(--gold); color: var(--dark); }
+        .slider-dots { display: flex; gap: 12px; }
+        .dot { width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer; transition: var(--transition); }
+        .dot.active { background: var(--gold); transform: scale(1.3); }
+        
+        /* Dark overlay for better text readability */
+        .slide::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 30%, rgba(0,0,0,0.1) 70%, rgba(0,0,0,0.7) 100%); pointer-events: none; }
 
         /* === 3. STATS BAR === */
-        .stats-bar { background: #fff; padding: 40px 0; border-bottom: 1px solid #eaeaea; }
+        .stats-bar { background: #150D06; padding: 40px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; gap: 20px; }
         .stat-item h3 { font-family: var(--font-heading); font-size: 36px; color: var(--gold); margin-bottom: 5px; }
-        .stat-item p { font-size: 14px; font-weight: 500; text-transform: uppercase; color: var(--dark); }
+        .stat-item p { font-size: 14px; font-weight: 500; text-transform: uppercase; color: var(--cream); }
 
         /* === 4. CATEGORIES === */
         .section { padding: 80px 0; }
         .section-header { margin-bottom: 40px; }
         .section-tag { font-size: 12px; font-weight: 600; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 10px; }
-        .section-title { font-family: var(--font-heading); font-size: 42px; color: var(--dark); }
+        .section-title { font-family: var(--font-heading); font-size: 42px; color: var(--cream); }
         .category-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .cat-card { background: #fff; padding: 30px; border-radius: var(--border-radius-card); text-align: center; border: 1px solid #eaeaea; transition: var(--transition); cursor: pointer; }
-        .cat-card:hover { transform: translateY(-4px); border-color: var(--gold); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .cat-card { background: rgba(255,255,255,0.03); padding: 30px; border-radius: var(--border-radius-card); text-align: center; border: 1px solid rgba(255,255,255,0.05); transition: var(--transition); cursor: pointer; }
+        .cat-card:hover { transform: translateY(-4px); border-color: var(--gold); box-shadow: 0 10px 20px rgba(184,134,11,0.1); }
         .cat-card .emoji { font-size: 48px; margin-bottom: 15px; display: block; }
-        .cat-card h3 { font-size: 18px; margin-bottom: 5px; }
-        .cat-card p { font-size: 14px; color: var(--gray); }
+        .cat-card h3 { font-size: 18px; margin-bottom: 5px; color: var(--cream); }
+        .cat-card p { font-size: 14px; color: #aaa; }
 
         /* === 5 & 7. PRODUCTS GRID === */
         .header-flex { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; }
         .link-view-all { color: var(--gold); font-weight: 500; font-size: 14px; }
         .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-        .product-card { background: #fff; border-radius: var(--border-radius-card); border: 1px solid #eaeaea; overflow: hidden; position: relative; transition: var(--transition); display: flex; flex-direction: column; }
-        .product-card:hover { transform: translateY(-4px); border-color: var(--gold); }
-        .product-img-wrap { aspect-ratio: 1; background: var(--cream); position: relative; display: flex; align-items: center; justify-content: center; font-size: 48px; }
-        .badge-country { position: absolute; top: 12px; left: 12px; background: rgba(255,255,255,0.9); padding: 4px 8px; border-radius: var(--border-radius-btn); font-size: 12px; font-weight: 600; }
+        .product-card { background: rgba(255,255,255,0.02); border-radius: var(--border-radius-card); border: 1px solid rgba(255,255,255,0.05); overflow: hidden; position: relative; transition: var(--transition); display: flex; flex-direction: column; }
+        .product-card:hover { transform: translateY(-4px); border-color: var(--gold); box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+        .product-img-wrap { aspect-ratio: 1; background: #22160C; position: relative; display: flex; align-items: center; justify-content: center; font-size: 48px; }
+        .badge-country { position: absolute; top: 12px; left: 12px; background: rgba(26,16,8,0.9); border: 1px solid var(--gold); color: var(--gold-light); padding: 4px 8px; border-radius: var(--border-radius-btn); font-size: 12px; font-weight: 600; }
         .flash-sale-badge { position: absolute; top: 12px; right: 12px; background: var(--red); color: white; padding: 4px 8px; border-radius: var(--border-radius-btn); font-size: 12px; font-weight: 600; z-index: 2; }
         .product-info { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
-        .product-sku { font-size: 11px; color: var(--gray); margin-bottom: 5px; }
-        .product-name { font-weight: 600; font-size: 16px; margin-bottom: 10px; line-height: 1.4; flex-grow: 1; }
+        .product-sku { font-size: 11px; color: var(--gold-light); margin-bottom: 5px; opacity: 0.7; }
+        .product-name { font-weight: 600; font-size: 16px; margin-bottom: 10px; line-height: 1.4; flex-grow: 1; color: var(--cream); }
         .product-price-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
-        .price-sale { color: var(--red); font-weight: 700; font-size: 18px; }
+        .price-sale { color: var(--gold); font-weight: 700; font-size: 18px; }
         .price-original { color: var(--gray); text-decoration: line-through; font-size: 14px; }
         .product-rating { font-size: 12px; color: var(--gray); margin-bottom: 15px; }
         .product-rating span.stars { color: #FFC107; }
-        .btn-add-cart { width: 100%; background: var(--cream); border: 1px solid var(--gold); color: var(--gold); padding: 12px; border-radius: var(--border-radius-btn); font-weight: 600; font-size: 13px; cursor: pointer; transition: var(--transition); }
-        .btn-add-cart:hover { background: var(--gold); color: white; }
+        .btn-add-cart { width: 100%; background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 12px; border-radius: var(--border-radius-btn); font-weight: 600; font-size: 13px; cursor: pointer; transition: var(--transition); }
+        .btn-add-cart:hover { background: var(--gold); color: var(--dark); }
 
         /* === 6. TET COLLECTION 2027 === */
         .tet-section { background: linear-gradient(135deg, var(--dark) 0%, #3D2910 100%); color: var(--cream); }
@@ -128,9 +137,9 @@
 
         /* === 8. WHY CHOOSE US === */
         .features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-        .feature-card { text-align: center; padding: 30px 20px; background: #fff; border-radius: var(--border-radius-card); border: 1px solid #eaeaea; }
+        .feature-card { text-align: center; padding: 30px 20px; background: rgba(255,255,255,0.03); border-radius: var(--border-radius-card); border: 1px solid rgba(255,255,255,0.05); }
         .feature-card .icon { font-size: 40px; margin-bottom: 15px; display: block; }
-        .feature-card h4 { font-size: 16px; margin-bottom: 10px; }
+        .feature-card h4 { font-size: 16px; margin-bottom: 10px; color: var(--cream); }
 
         /* === 9. CTA SECTION === */
         .cta-section { background: linear-gradient(to right, #B8860B, #F5E6B0); padding: 60px 0; text-align: center; }
@@ -150,33 +159,39 @@
         .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; display: flex; justify-content: space-between; font-size: 14px; }
 
         /* === CART SLIDE PANEL === */
-        .cart-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; visibility: hidden; opacity: 0; transition: var(--transition); }
+        .cart-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 2000; visibility: hidden; opacity: 0; transition: var(--transition); }
         .cart-overlay.active { visibility: visible; opacity: 1; }
-        .cart-panel { position: fixed; top: 0; right: -400px; width: 400px; max-width: 100%; height: 100vh; background: #fff; z-index: 2001; transition: transform 0.4s ease; display: flex; flex-direction: column; box-shadow: -5px 0 15px rgba(0,0,0,0.1); }
+        .cart-panel { position: fixed; top: 0; right: -400px; width: 400px; max-width: 100%; height: 100vh; background: var(--dark); z-index: 2001; transition: transform 0.4s ease; display: flex; flex-direction: column; box-shadow: -5px 0 15px rgba(0,0,0,0.5); color: var(--cream); }
         .cart-panel.active { transform: translateX(-400px); }
-        .cart-header { padding: 20px; border-bottom: 1px solid #eaeaea; display: flex; justify-content: space-between; align-items: center; }
-        .cart-header h3 { font-family: var(--font-heading); font-size: 24px; }
-        .close-cart { background: none; border: none; font-size: 24px; cursor: pointer; color: var(--gray); }
+        .cart-header { padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; }
+        .cart-header h3 { font-family: var(--font-heading); font-size: 24px; color: var(--gold); }
+        .close-cart { background: none; border: none; font-size: 24px; cursor: pointer; color: var(--gray); transition: var(--transition); }
+        .close-cart:hover { color: var(--gold); }
         .cart-body { flex-grow: 1; overflow-y: auto; padding: 20px; }
         .cart-empty { text-align: center; color: var(--gray); margin-top: 50px; }
-        .cart-item { display: flex; gap: 15px; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #eaeaea; }
+        .cart-item { display: flex; gap: 15px; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .cart-item-info { flex-grow: 1; }
-        .cart-item-title { font-weight: 600; font-size: 14px; margin-bottom: 5px; }
-        .cart-item-price { color: var(--red); font-weight: 600; margin-bottom: 10px; }
+        .cart-item-title { font-weight: 600; font-size: 14px; margin-bottom: 5px; color: var(--cream); }
+        .cart-item-price { color: var(--gold); font-weight: 600; margin-bottom: 10px; }
         .qty-control { display: flex; align-items: center; gap: 10px; }
-        .qty-btn { width: 24px; height: 24px; border: 1px solid #ccc; background: #fff; cursor: pointer; border-radius: 4px; }
-        .cart-item-remove { color: var(--gray); text-decoration: underline; font-size: 12px; cursor: pointer; border: none; background: none; margin-left: auto; }
-        .cart-footer { padding: 20px; border-top: 1px solid #eaeaea; background: var(--cream); }
-        .cart-total { display: flex; justify-content: space-between; font-size: 18px; font-weight: 700; margin-bottom: 20px; }
-        .btn-checkout { width: 100%; background: #0068FF; color: white; border: none; padding: 15px; border-radius: var(--border-radius-btn); font-weight: 600; font-size: 16px; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 10px; }
+        .qty-btn { width: 24px; height: 24px; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: var(--cream); cursor: pointer; border-radius: 4px; transition: var(--transition); }
+        .qty-btn:hover { border-color: var(--gold); color: var(--gold); }
+        .cart-item-remove { color: var(--gray); text-decoration: underline; font-size: 12px; cursor: pointer; border: none; background: none; margin-left: auto; transition: var(--transition); }
+        .cart-item-remove:hover { color: var(--red); }
+        .cart-footer { padding: 20px; border-top: 1px solid rgba(255,255,255,0.05); background: #150D06; }
+        .cart-total { display: flex; justify-content: space-between; font-size: 18px; font-weight: 700; margin-bottom: 20px; color: var(--cream); }
+        .btn-checkout { width: 100%; background: var(--gold); color: var(--dark); border: none; padding: 15px; border-radius: var(--border-radius-btn); font-weight: 600; font-size: 16px; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 10px; transition: var(--transition); }
+        .btn-checkout:hover { background: #A07509; }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .hero-grid, .tet-grid, .footer-grid { grid-template-columns: 1fr; }
+            .tet-grid, .footer-grid { grid-template-columns: 1fr; }
             .stats-grid, .product-grid, .features-grid { grid-template-columns: 1fr 1fr; }
             .category-grid { grid-template-columns: 1fr; }
             .nav-links { display: none; }
             .hero-title { font-size: 42px; }
+            .slide-content.left-align, .slide-content.right-align { padding: 0 20px; text-align: center; }
+            .slide-content.right-align .hero-btns { justify-content: center; }
             .cart-panel.active { transform: translateX(-100vw); width: 100vw; right: -100vw;}
         }
         @media (max-width: 480px) {
@@ -207,26 +222,74 @@
         </div>
     </nav>
 
-    <!-- 2. HERO SECTION -->
-    <section class="hero">
-        <div class="container hero-grid">
-            <div>
-                <span class="hero-badge">NHẬP KHẨU CHÍNH NGẠCH ✓</span>
-                <h1 class="hero-title">Tinh hoa<br><i>Trái Cây Thế Giới</i></h1>
-                <p class="hero-subtitle">Tặng Quà Sang Trọng — Ăn Ngon Mỗi Ngày</p>
-                <p class="hero-desc">Từ những vườn trái cây chọn lọc toàn cầu đến bàn nhà bạn. Trái cây tươi nhập khẩu & giỏ quà Tết cao cấp, giao tận nơi nội thành TP.HCM.</p>
-                <div class="hero-btns">
-                    <button class="btn-primary" onclick="location.href='#qua-tet'">Khám phá Giỏ Quà</button>
-                    <button class="btn-outline" onclick="location.href='#trai-cay'">Mua Trái Cây</button>
+    <!-- 2. HERO SLIDER SECTION -->
+    <section class="hero-slider" id="home">
+        <div class="slider-container" id="heroSlider">
+            
+            <!-- Slide 1: Cherry (Prompt: left 45% is product, right 50% empty -> text on Right) -->
+            <div class="slide">
+                <img src="banner-cherry.png" alt="Cherry Đỏ Mỹ">
+                <div class="slide-content right-align">
+                    <span class="hero-badge">BEST SELLER ✓</span>
+                    <h1 class="hero-title">Cherry Đỏ Mỹ<br><i>Thượng Hạng</i></h1>
+                    <p class="hero-subtitle">Tươi Ngon - Đậm Vị</p>
+                    <p class="hero-desc">Lựa chọn hàng đầu cho sức khỏe và sắc đẹp, nhập khẩu trực tiếp bằng đường hàng không.</p>
+                    <div class="hero-btns">
+                        <button class="btn-primary" onclick="location.href='#trai-cay'">Mua Ngay</button>
+                    </div>
                 </div>
             </div>
-            <div class="hero-showcase">
-                <div class="mini-card"><span class="emoji">🍇</span><div><h4>Nho Shine Muscat</h4><p>Nhật Bản</p></div></div>
-                <div class="mini-card"><span class="emoji">🍓</span><div><h4>Dâu Tây Size XL</h4><p>Hàn Quốc</p></div></div>
-                <div class="mini-card"><span class="emoji">🥝</span><div><h4>Kiwi Vàng Zespri</h4><p>New Zealand</p></div></div>
-                <div class="mini-card"><span class="emoji">🍒</span><div><h4>Cherry Đỏ Tươi</h4><p>Mỹ</p></div></div>
-                <div class="mini-card wide"><span class="emoji">🎁</span><div><h4>Bộ sưu tập Quà Tết 2027</h4><p>Thiết kế độc bản B2B</p></div></div>
+
+            <!-- Slide 2: Japanese Fruits (Prompt: right 55% product, left 40% empty -> text on Left) -->
+            <div class="slide">
+                <img src="banner-japan.png" alt="Trái Cây Nhật Bản">
+                <div class="slide-content left-align">
+                    <span class="hero-badge">NHẬP KHẨU CHÍNH NGẠCH ✓</span>
+                    <h1 class="hero-title">Tinh hoa<br><i>Trái Cây Nhật Bản</i></h1>
+                    <p class="hero-subtitle">Shine Muscat - Amaou - Hakuto</p>
+                    <p class="hero-desc">Thưởng thức hương vị trái cây cao cấp bậc nhất thế giới từ xứ sở mặt trời mọc.</p>
+                    <div class="hero-btns">
+                        <button class="btn-primary" onclick="location.href='#trai-cay'">Khám Phá</button>
+                    </div>
+                </div>
             </div>
+
+            <!-- Slide 3: Corporate Gifts (Prompt: right 60% product, left 40% empty -> text on Left) -->
+            <div class="slide">
+                <img src="banner-corporate.png" alt="Giỏ Quà Doanh Nghiệp">
+                <div class="slide-content left-align">
+                    <span class="hero-badge">QUÀ TẾT DOANH NGHIỆP 2027 ✓</span>
+                    <h1 class="hero-title">Giải Pháp Quà Tặng<br><i>Đẳng Cấp B2B</i></h1>
+                    <p class="hero-subtitle">Thiết Kế Độc Bản - In Logo Theo Yêu Cầu</p>
+                    <p class="hero-desc">Nâng tầm thương hiệu với bộ sưu tập giỏ quà trái cây và thực phẩm nhập khẩu sang trọng.</p>
+                    <div class="hero-btns">
+                        <button class="btn-primary" onclick="location.href='#qua-tet'">Nhận Báo Giá</button>
+                        <button class="btn-outline" onclick="location.href='#danh-muc'">Xem Danh Mục</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Global Fruits (Prompt: right side curved, left 35% empty -> text on Left) -->
+            <div class="slide">
+                <img src="banner-global.png" alt="Trái Cây Toàn Cầu">
+                <div class="slide-content left-align">
+                    <span class="hero-badge">12 QUỐC GIA ✓</span>
+                    <h1 class="hero-title">Trái Cây Nhập Khẩu<br><i>Toàn Cầu</i></h1>
+                    <p class="hero-subtitle">Hương Vị Thế Giới Trên Bàn Ăn</p>
+                    <p class="hero-desc">Đa dạng lựa chọn từ những nhà vườn uy tín nhất trên toàn thế giới, chất lượng chuẩn quốc tế.</p>
+                    <div class="hero-btns">
+                        <button class="btn-primary" onclick="location.href='#trai-cay'">Mua Trái Cây</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+        <!-- Slider Controls -->
+        <div class="slider-controls">
+            <button class="slider-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+            <div class="slider-dots" id="sliderDots"></div>
+            <button class="slider-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
         </div>
     </section>
 
@@ -403,6 +466,48 @@
             if (window.scrollY > 50) nav.classList.add('scrolled');
             else nav.classList.remove('scrolled');
         });
+
+        /* HERO SLIDER LOGIC */
+        let currentSlide = 0;
+        const sliderContainer = document.getElementById('heroSlider');
+        const slides = document.querySelectorAll('.slide');
+        const dotsContainer = document.getElementById('sliderDots');
+        let slideInterval;
+
+        // Initialize dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.onclick = () => goToSlide(index);
+            dotsContainer.appendChild(dot);
+        });
+        const dots = document.querySelectorAll('.dot');
+
+        const updateSlider = () => {
+            sliderContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[currentSlide].classList.add('active');
+        };
+
+        const moveSlide = (step) => {
+            currentSlide = (currentSlide + step + slides.length) % slides.length;
+            updateSlider();
+            resetInterval();
+        };
+
+        const goToSlide = (index) => {
+            currentSlide = index;
+            updateSlider();
+            resetInterval();
+        };
+
+        const resetInterval = () => {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(() => moveSlide(1), 5000); // Tự động chuyển sau 5 giây
+        };
+        
+        resetInterval();
 
         /* PRODUCT DATA */
         const fruits = [
